@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="gbfp.c" open="0" top="0" tabpos="1">
+		<Cursor position="1170" topLine="144" />
+	</File>
+	<File name="gbfp.h" open="0" top="0" tabpos="3">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="genISeqs.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="21559" topLine="603" />
+	</File>
+	<File name="genISeqs.h" open="1" top="0" tabpos="2">
+		<Cursor position="449" topLine="7" />
+	</File>
+	<File name="nwaln.cpp" open="1" top="1" tabpos="5">
+		<Cursor position="3196" topLine="98" />
+	</File>
+	<File name="nwaln.h" open="1" top="0" tabpos="6">
+		<Cursor position="163" topLine="0" />
+	</File>
+	<File name="swaln.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="4096" topLine="126" />
+	</File>
+	<File name="swaln.h" open="1" top="0" tabpos="3">
+		<Cursor position="172" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

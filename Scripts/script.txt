@@ -1,0 +1,37 @@
+/research/genedb/ncbi-blast-2.2.28+/bin/blastn -task megablast -db nt -evalue 1e-01 -query /ramfs/genedb/ISQuest/1218R/Contigs1218R.fasta -out test.txt -outfmt "10 qseqid sseqid stitle salltitles qstart qend sstart send" &
+
+grep 'transposase' test.txt > transBlast.txt
+
+grep 'integrase' test.txt > transBlast.txt
+
+
+sed -n '1~4s/^@/>/p;2~4p' AP010968_reads.fq > AP010968_reads.fasta
+
+nohup ~/carp/ISQuest/linux_64/a.out ~/carp/ISQuest/linux_64/param.conf ContigsM11.fasta M11_PAIRED.fasta M11 > & test.txt &
+
+nohup ~/carp/ISQuest/linux_64/a.out ~/carp/ISQuest/linux_64/param.conf mmRawAllContigs.fasta mmRaw.fasta mmRaw >& test.txt &
+ 
+http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&rettype=gb&id=AF006614
+ 
+ 
+ 
+gcc -c -o gbfp.o gbfp.c
+g++ -c -o swaln.o swaln.cpp
+g++ -c -o nwaln.o nwaln.cpp
+g++ -c -o genISeqs.o genISeqs.cpp 
+g++ -c -o testISQuest.o testISQuest.cpp 
+g++ -c -o getTransDB.o getTransDB.cpp 
+g++ gbfp.o getTransDB.o -o getTransDB
+g++ nwaln.o testISQuest.o -o testISQuest
+g++ gbfp.o swaln.o nwaln.o genISeqs.o
+
+nohup ~/carp/ISQuest/linux_64/a.out ~/carp/ISQuest/linux_64/param.conf 453-022Contigs.fasta 453-022_A_CAGAGAGG-CTAAGCCT_L001_R_TRIM_PAIRED_orig.fasta 453-022 >& test.txt &
+
+nohup ~/carp/ISQuest/linux_64/a.out ~/carp/ISQuest/linux_64/param.conf 324-958 >& test.txt &
+
+
+./art_454 -p 454_profiles/GS_FLX_Titanium_profile /ramfs/genedb/ISQuest/NC_010612.fna /ramfs/genedb/ISQuest/testAsm/testmm 20 3500 200
+~/wgs-7.0-Linux-amd64/wgs-7.0/Linux-amd64/bin/fastqToCA -libraryname MATED -technology 454 -insertsize 3000 200 -mates testmm1.fq,testmm2.fq > testmm1.frg
+
+art_illumina -i /ramfs/genedb/NC_010612.fna -p -l 250 -f 50 -m 500 -s 50 -o testmm
+
